@@ -1,0 +1,35 @@
+### 🔄 Project Awareness & Context
+# The AI must follow these rules to understand the project's architecture, goals, and constraints.
+
+- **Always read `PLANNING.md`** at the start of a new session to understand the project's high-level vision, architecture, tech stack, and component design philosophy.
+- **Always read `TASK.md`** before starting any work. Execute tasks sequentially, one by one. Do not proceed to the next task until the current one is fully completed.
+- **Use the files listed in the context** as high-quality references for code structure, hook usage, and library integration, but **the ultimate source of truth for visual implementation is the Figma data** extracted via `@mcp_framerlink`.
+
+### 🧱 Code Structure & Modularity
+# Rules for generating clean, maintainable code.
+
+- **Never create a file longer than 400 lines of code.** If a component or screen becomes too complex, propose a refactor by splitting it into smaller, dedicated components.
+- **Organize the generated code into the specified structure:** All new screens must be placed in `MyuzeRedesign/screens/`. All new reusable components must be placed in `MyuzeRedesign/components/ui/`.
+- **Use clear, consistent imports.**
+
+### ✅ Task Completion & Process
+# Rules for tracking progress and managing the workflow.
+
+- **Mark completed tasks in `TASK.md` with an `[x]`** immediately after finishing and verifying them.
+- **Log any issues, blocking problems, or necessary new sub-tasks** discovered during development to the "Backlog / Descobertas Mid-Processo" section of `TASK.md`.
+
+### 💅 Style & Conventions for React Native
+# This is the specific "style guide" the AI must follow for this project.
+
+- **Use TypeScript (.tsx)** as the primary language for all components and screens.
+- **Always create functional components using React Hooks.**
+- **Use NativeWind for all styling.** Apply styles exclusively via the `className` prop. **Do not use inline styles or `StyleSheet.create()`**.
+- **Use `react-hook-form` and `zod`** for form management, referencing the existing code for implementation patterns.
+- **Write JSDoc comments for every new component,** explaining its purpose and props.
+
+### 🧠 AI Behavior Rules
+# Core behavioral guardrails to prevent errors and hallucinations.
+
+- **Never assume missing context. If a design detail is ambiguous, ask for clarification** before implementing.
+- **Never hallucinate libraries or components.** Only use the libraries specified in the project's `package.json` and `PLANNING.md`.
+- **Never delete or overwrite existing code outside of the `MyuzeRedesign/` directory.** The `MyuzeRedesign/` directory is the designated sandbox for this task. The `client/` directory is strictly read-only for context.
